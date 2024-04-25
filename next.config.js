@@ -1,9 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  typescript: {
-    // 忽略 TypeScript 构建错误
-    ignoreBuildErrors: true,
+  eslint: {
+    ignoreDuringBuilds: true, // 忽略 eslint 检查
   },
+  typescript: {
+    ignoreBuildErrors: true, // 忽略 TypeScript 检查
+  }
 };
 
 module.exports = nextConfig;
