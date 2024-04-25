@@ -158,8 +158,10 @@ export async function fetchInvoiceById(id: string) {
         invoices.id,
         invoices.customer_id,
         invoices.amount,
-        invoices.status
+        invoices.status,
+        customers.name     
       FROM invoices
+      LEFT JOIN customers ON invoices.customer_id = customers.id
       WHERE invoices.id = ${id};
     `;
 
